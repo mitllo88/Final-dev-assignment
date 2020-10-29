@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Attendance Screen</title>
+	<style>
+		{% include css/style.css %}
+		{% include css/bootstrap.min.css %}
+	</style>
+
+  </head>
+  <body>
+	<nav class="navbar navbar-light bg-dark">
+	  <p class="navbar-brand">Attendance</a>
+	</nav>
+    <div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2">
+				<ul id="classes">
+				
+				</ul>
+			</div>
+			<div class="col-md-8">
+			</div>
+			<div class="col-md-2">
+				<img class="user" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="blank user" style="height: 160px;"/>
+				<p>Name:</p>
+				<p>Age:</p>
+				<p>Class:</p>
+				<p>Enrolled:</p>
+				<p>Ethnicity:</p>
+				<p>Phone:</p>
+				<p>Status:</p>
+			</div>
+		</div>
+	</div>
+
+    <script>
+        {% include js/scripts.js %}
+		{% include js/jquery.min.js %}
+		{% include js/bootstrap.min.js %}
+    </script>
+  </body>
+</html>

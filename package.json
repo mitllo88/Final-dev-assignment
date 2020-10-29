@@ -1,0 +1,23 @@
+{
+  "name": "final-dev-assignment-mitllo88",
+  "version": "1.0.0",
+  "description": "final-dev-assignment-mitllo88 created by GitHub Classroom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IN729-UXE/final-dev-assignment-mitllo88.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IN729-UXE/final-dev-assignment-mitllo88/issues"
+  },
+  "homepage": "https://github.com/IN729-UXE/final-dev-assignment-mitllo88#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  }
+}
