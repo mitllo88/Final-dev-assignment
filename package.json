@@ -4,7 +4,9 @@
   "description": "final-dev-assignment-mitllo88 created by GitHub Classroom",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"build": "npx @11ty/eleventy",
+	"start": "npx @11ty/eleventy --serve"
   },
   "repository": {
     "type": "git",

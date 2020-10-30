@@ -10,6 +10,10 @@ function status(response) {
 function json(response) {
   return response.json()
 }
+let d = fetch('https://gist.githubusercontent.com/eallenOP/b40fa9bba517ff258da395c79edd2477/raw/7965e1ce6ae46e53fe3030cf96562df58d11b5fb/attendance.json')
+window.localStorage.setItem("storedPersons", JSON.stringify());
+console.log(window.localStorage.getItem("storedPersons"));
+let radios = document.forms["classes"].elements["class"];
 
 var jsondata = [];
 
@@ -18,7 +22,6 @@ fetch('https://gist.githubusercontent.com/eallenOP/b40fa9bba517ff258da395c79edd2
   .then(json)
   .then(function(data) {
 	jsondata = data;
-	console.log(jsondata)
 	classes = [];
 	for(var i = 0; i < jsondata.length; i++) {
 		var obj = jsondata[i];
@@ -27,11 +30,7 @@ fetch('https://gist.githubusercontent.com/eallenOP/b40fa9bba517ff258da395c79edd2
 			classes.push(obj.class)
 		}
 	}
-	for (var i = 0; i < classes.length; i++) {
-		document.getElementById("classes").innerHTML += `<li style="list-style-type: none;"><a href="#" class="class" id=${classes[i]}><strong>${classes[i]}</strong></a></li>`;
-	}
+	console.log(classes);
   }).catch(function(error) {
     console.log('Request failed', error);
   });
-  
-console.log(jsondata);

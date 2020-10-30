@@ -2,3 +2,31 @@
 .user {
 	height: 160px;
 }
+
+.class-item {
+	list-style-type: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.class-item a {
+	color: black;
+}
+
+.radio-custom {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.person-list {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 0.8em;
+}
+
+.radio-custom:checked + label {
+    color: steelblue;
+    font-weight: bold;
+}
