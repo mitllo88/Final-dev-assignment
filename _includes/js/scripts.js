@@ -69,7 +69,6 @@ for (var i = 0, max = radios.length; i < max; i++) {
 					list = IN700;
 					break;
 			}
-			console.log(list);
 			return list;
 		}
 		
@@ -77,26 +76,152 @@ for (var i = 0, max = radios.length; i < max; i++) {
 		
 		document.getElementById("class-name").innerHTML = activeClass[0].class;
 		
-		function addRow(tableID, id, first, last/*, attendance1, attendance2, attendance3, attendance4*/) {
+		function addRow(tableID, person) {
 		  // Get a reference to the table
 		  let tableRef = document.getElementById(tableID);
 
 		  // Insert a row at the end of the table
 		  let newRow = tableRef.insertRow(-1);
+		  
+		  let label1 = "";
+		  let label2 = "";
+		  let label3 = "";
+		  let label4 = "";
+		  let label5 = "";
 
 		  // Insert three cells in the row
 		  let newCellId = newRow.insertCell(0);
 		  let newCellName = newRow.insertCell(1);
-		  //let newCellAtt1 = newRow.insertCell(2);
-		  //let newCellAtt2 = newRow.insertCell(2);
-		  //let newCellAtt3 = newRow.insertCell(2);
-		  //let newCellAtt4 = newRow.insertCell(2);
+		  let newCellAtt4 = newRow.insertCell(2);
+		  let newCellAtt3 = newRow.insertCell(3);
+		  let newCellAtt2 = newRow.insertCell(4);
+		  let newCellAtt1 = newRow.insertCell(5);
+		  for (var i = 0; i < person.attendance.length; i++) {
+			switch (i) {
+				case 0:
+					switch (person.attendance[i]) {
+						case "s":
+							newCellAtt1.style.backgroundColor = "red";
+							label1 = document.createTextNode(person.attendance[i]);
+							newCellAtt1.appendChild(label1);
+							break;
+						case "a":
+							newCellAtt1.style.backgroundColor = "orange";
+							label2 = document.createTextNode(person.attendance[i]);
+							newCellAtt1.appendChild(label2);
+							break;
+						case "e":
+							newCellAtt1.style.backgroundColor = "yellow";
+							label3 = document.createTextNode(person.attendance[i]);
+							newCellAtt1.appendChild(label3);
+							break;
+						case "p":
+							newCellAtt1.style.backgroundColor = "green";
+							label4 = document.createTextNode(person.attendance[i]);
+							newCellAtt1.appendChild(label4);
+							break;
+						case "l":
+							newCellAtt1.style.backgroundColor = "gray";
+							label5 = document.createTextNode(person.attendance[i]);
+							newCellAtt1.appendChild(label5);
+							break;							
+					}
+					break;
+				case 1:
+					switch (person.attendance[i]) {
+						case "s":
+							newCellAtt2.style.backgroundColor = "red";
+							label1 = document.createTextNode(person.attendance[i]);
+							newCellAtt2.appendChild(label1);
+							break;
+						case "a":
+							newCellAtt2.style.backgroundColor = "orange";
+							label2 = document.createTextNode(person.attendance[i]);
+							newCellAtt2.appendChild(label2);
+							break;
+						case "e":
+							newCellAtt2.style.backgroundColor = "yellow";
+							label3 = document.createTextNode(person.attendance[i]);
+							newCellAtt2.appendChild(label3);
+							break;
+						case "p":
+							newCellAtt2.style.backgroundColor = "green";
+							label4 = document.createTextNode(person.attendance[i]);
+							newCellAtt2.appendChild(label4);
+							break;
+						case "l":
+							newCellAtt2.style.backgroundColor = "gray";
+							label5 = document.createTextNode(person.attendance[i]);
+							newCellAtt2.appendChild(label5);
+							break;							
+					}
+					break;
+				case 2:
+					switch (person.attendance[i]) {
+						case "s":
+							newCellAtt3.style.backgroundColor = "red";
+							label1 = document.createTextNode(person.attendance[i]);
+							newCellAtt3.appendChild(label1);
+							break;
+						case "a":
+							newCellAtt3.style.backgroundColor = "orange";
+							label2 = document.createTextNode(person.attendance[i]);
+							newCellAtt3.appendChild(label2);
+							break;
+						case "e":
+							newCellAtt3.style.backgroundColor = "yellow";
+							label3 = document.createTextNode(person.attendance[i]);
+							newCellAtt3.appendChild(label3);
+							break;
+						case "p":
+							newCellAtt3.style.backgroundColor = "green";
+							label4 = document.createTextNode(person.attendance[i]);
+							newCellAtt3.appendChild(label4);
+							break;
+						case "l":
+							newCellAtt3.style.backgroundColor = "gray";
+							label5 = document.createTextNode(person.attendance[i]);
+							newCellAtt3.appendChild(label5);
+							break;							
+					}
+					break;
+				default:
+					switch (person.attendance[i]) {
+						case "s":
+							newCellAtt4.style.backgroundColor = "red";
+							label1 = document.createTextNode(person.attendance[i]);
+							newCellAtt4.appendChild(label1);
+							break;
+						case "a":
+							newCellAtt4.style.backgroundColor = "orange";
+							label2 = document.createTextNode(person.attendance[i]);
+							newCellAtt4.appendChild(label2);
+							break;
+						case "e":
+							newCellAtt4.style.backgroundColor = "yellow";
+							label3 = document.createTextNode(person.attendance[i]);
+							newCellAtt4.appendChild(label3);
+							break;
+						case "p":
+							newCellAtt4.style.backgroundColor = "green";
+							label4 = document.createTextNode(person.attendance[i]);
+							newCellAtt4.appendChild(label4);
+							break;
+						case "l":
+							newCellAtt4.style.backgroundColor = "gray";
+							label5 = document.createTextNode(person.attendance[i]);
+							newCellAtt4.appendChild(label5);
+							break;							
+					}
+					break;
+			}
+		  }
 
 		  // Append a text node to the cell
-		  let idText = document.createTextNode(id);
+		  let idText = document.createTextNode(person.id);
 		  newCellId.appendChild(idText);
 		  
-		  let fullName = first + " " + last;
+		  let fullName = person.name.first + " " + person.name.last;
 		  let name = document.createTextNode(fullName);
 		  newCellName.appendChild(name);
 		}
@@ -104,7 +229,7 @@ for (var i = 0, max = radios.length; i < max; i++) {
 		document.getElementById("class-data").innerHTML = "";
 		
 		for (var i = 0; i < activeClass.length; i++) {
-			addRow('class-data', activeClass[i].id, activeClass[i].name.first, activeClass[i].name.last)
+			addRow('class-data', activeClass[i])
 		}
 	}
 }
