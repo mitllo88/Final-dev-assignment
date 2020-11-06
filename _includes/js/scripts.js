@@ -88,6 +88,8 @@ for (var i = 0, max = radios.length; i < max; i++) {
 		  let label3 = "";
 		  let label4 = "";
 		  let label5 = "";
+		  let labelTotal = "";
+		  let absent = 0;
 
 		  // Insert three cells in the row
 		  let newCellId = newRow.insertCell(0);
@@ -96,9 +98,15 @@ for (var i = 0, max = radios.length; i < max; i++) {
 		  let newCellAtt3 = newRow.insertCell(3);
 		  let newCellAtt2 = newRow.insertCell(4);
 		  let newCellAtt1 = newRow.insertCell(5);
+		  let newCellAtt5 = newRow.insertCell(6);
+		  let newCellAttTotal = newRow.insertCell(7);
 		  for (var i = 0; i < person.attendance.length; i++) {
+			if (person.attendance[i] == "a" || person.attendance[i] == "s" || person.attendance[i] == "l") {
+				absent += 1;
+			}
 			switch (i) {
 				case 0:
+					newCellAtt1.setAttribute("class", "Cell4");
 					switch (person.attendance[i]) {
 						case "s":
 							newCellAtt1.style.backgroundColor = "red";
@@ -128,6 +136,7 @@ for (var i = 0, max = radios.length; i < max; i++) {
 					}
 					break;
 				case 1:
+					newCellAtt2.setAttribute("class", "Cell3");
 					switch (person.attendance[i]) {
 						case "s":
 							newCellAtt2.style.backgroundColor = "red";
@@ -157,6 +166,7 @@ for (var i = 0, max = radios.length; i < max; i++) {
 					}
 					break;
 				case 2:
+					newCellAtt3.setAttribute("class", "Cell2");
 					switch (person.attendance[i]) {
 						case "s":
 							newCellAtt3.style.backgroundColor = "red";
@@ -186,6 +196,7 @@ for (var i = 0, max = radios.length; i < max; i++) {
 					}
 					break;
 				default:
+					newCellAtt4.setAttribute("class", "Cell1");
 					switch (person.attendance[i]) {
 						case "s":
 							newCellAtt4.style.backgroundColor = "red";
@@ -216,6 +227,12 @@ for (var i = 0, max = radios.length; i < max; i++) {
 					break;
 			}
 		  }
+		  labelTotal = document.createTextNode(absent);
+		  newCellAttTotal.appendChild(labelTotal);
+		  newCellAttTotal.setAttribute("class", "absent");
+		  newCellAtt5.style.backgroundColor = "white";
+		  newCellAtt5.setAttribute("class", "Cell5");
+		  newCellAtt5.setAttribute("value", person.index);
 
 		  // Append a text node to the cell
 		  let idText = document.createTextNode(person.id);
@@ -230,6 +247,11 @@ for (var i = 0, max = radios.length; i < max; i++) {
 		
 		for (var i = 0; i < activeClass.length; i++) {
 			addRow('class-data', activeClass[i])
+		}
+		
+		let emptyCells = document.getElementsByClassName('Cell5');
+		for (var i = 0, max = emptyCells.length - 1; i < max; i++) {
+			console.log(emptyCells[i]);
 		}
 	}
 }

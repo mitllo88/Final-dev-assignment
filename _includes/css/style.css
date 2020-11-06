@@ -34,3 +34,7 @@
 .att {
 	text-align: center;
 }
+
+.absent {
+	color: red;
+}
