@@ -10,7 +10,34 @@
 		{% include css/style.css %}
 		{% include css/bootstrap.min.css %}
 	</style>
+	<script type='text/javascript'>
+	function colorChanger(el){
+		console.log(el.style.backgroundColor);
+		switch (el.style.backgroundColor) {
+			case "green":
+				el.style.backgroundColor = "red";
+				el.innerHTML = "s";
+				break;
+			case "red":
+				el.style.backgroundColor = "orange";
+				el.innerHTML = "a";
+				break;
+			case "orange":
+				el.style.backgroundColor = "yellow";
+				el.innerHTML = "e";
+				break;
+			case "yellow":
+				el.style.backgroundColor = "gray";
+				el.innerHTML = "l";
+				break;
+			default:
+				el.style.backgroundColor = "green";
+				el.innerHTML = "p";
+				break;
+		}
+	}
 
+	</script>
   </head>
   <body>
 	<nav class="navbar navbar-dark bg-dark">
@@ -59,9 +86,17 @@
 			  <tbody id="class-data">
 			  </tbody>
 			</table>
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right;">
 				Save Attendance
-			  </button>
+			</button>
+			<p class="legend">Legend</p>
+			<ul style="list-style: none;">
+				<li>P: Present</li>
+				<li>E: Explained</li>
+				<li>S: Sick</li>
+				<li>L: Late</li>
+				<li>A: Absent</li>
+			</ul>
 			</div>
 			<div class="col-md-2">
 				<img class="user" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="blank user" style="height: 160px;"/>

@@ -233,6 +233,7 @@ for (var i = 0, max = radios.length; i < max; i++) {
 		  newCellAtt5.style.backgroundColor = "white";
 		  newCellAtt5.setAttribute("class", "Cell5");
 		  newCellAtt5.setAttribute("value", person.index);
+		  newCellAtt5.setAttribute("onClick", "colorChanger(this);");
 
 		  // Append a text node to the cell
 		  let idText = document.createTextNode(person.id);
@@ -247,11 +248,6 @@ for (var i = 0, max = radios.length; i < max; i++) {
 		
 		for (var i = 0; i < activeClass.length; i++) {
 			addRow('class-data', activeClass[i])
-		}
-		
-		let emptyCells = document.getElementsByClassName('Cell5');
-		for (var i = 0, max = emptyCells.length - 1; i < max; i++) {
-			console.log(emptyCells[i]);
 		}
 	}
 }
