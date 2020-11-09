@@ -99,7 +99,14 @@ for (var i = 0, max = radios.length; i < max; i++) {
 		  let newCellAtt2 = newRow.insertCell(4);
 		  let newCellAtt1 = newRow.insertCell(5);
 		  let newCellAtt5 = newRow.insertCell(6);
-		  let newCellAttTotal = newRow.insertCell(7);
+		  let newCellAtt6 = newRow.insertCell(7);
+		  let newCellAtt7 = newRow.insertCell(8);
+		  let newCellAtt8 = newRow.insertCell(9);
+		  let newCellAtt9 = newRow.insertCell(10);
+		  let newCellAtt10 = newRow.insertCell(11);
+		  let newCellAtt11 = newRow.insertCell(12);
+		  let newCellAtt12 = newRow.insertCell(13);
+		  let newCellAttTotal = newRow.insertCell();
 		  for (var i = 0; i < person.attendance.length; i++) {
 			if (person.attendance[i] == "a" || person.attendance[i] == "s" || person.attendance[i] == "l") {
 				absent += 1;
@@ -230,10 +237,30 @@ for (var i = 0, max = radios.length; i < max; i++) {
 		  labelTotal = document.createTextNode(absent);
 		  newCellAttTotal.appendChild(labelTotal);
 		  newCellAttTotal.setAttribute("class", "absent");
-		  newCellAtt5.style.backgroundColor = "white";
 		  newCellAtt5.setAttribute("class", "Cell5");
 		  newCellAtt5.setAttribute("value", person.index);
 		  newCellAtt5.setAttribute("onClick", "colorChanger(this);");
+		  newCellAtt6.setAttribute("class", "Cell5");
+		  newCellAtt6.setAttribute("value", person.index);
+		  newCellAtt6.setAttribute("onClick", "colorChanger(this);");
+		  newCellAtt7.setAttribute("class", "Cell5");
+		  newCellAtt7.setAttribute("value", person.index);
+		  newCellAtt7.setAttribute("onClick", "colorChanger(this);");
+		  newCellAtt8.setAttribute("class", "Cell5");
+		  newCellAtt8.setAttribute("value", person.index);
+		  newCellAtt8.setAttribute("onClick", "colorChanger(this);");
+		  newCellAtt9.setAttribute("class", "Cell5");
+		  newCellAtt9.setAttribute("value", person.index);
+		  newCellAtt9.setAttribute("onClick", "colorChanger(this);");
+		  newCellAtt10.setAttribute("class", "Cell5");
+		  newCellAtt10.setAttribute("value", person.index);
+		  newCellAtt10.setAttribute("onClick", "colorChanger(this);");
+		  newCellAtt11.setAttribute("class", "Cell5");
+		  newCellAtt11.setAttribute("value", person.index);
+		  newCellAtt11.setAttribute("onClick", "colorChanger(this);");
+		  newCellAtt12.setAttribute("class", "Cell5");
+		  newCellAtt12.setAttribute("value", person.index);
+		  newCellAtt12.setAttribute("onClick", "colorChanger(this);");
 
 		  // Append a text node to the cell
 		  let idText = document.createTextNode(person.id);
